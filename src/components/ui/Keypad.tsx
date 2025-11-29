@@ -49,7 +49,7 @@ const Keypad = () => {
       <button type="button" className="key keypad__double" aria-label="Design">
         <span className="key__mask">
           <span className="key__content">
-            <span className="key__text">_DESIGN</span>
+            <span className="key__text">__DESIGN</span>
             <img
               src="https://assets.codepen.io/605876/keypad-double.png?format=auto&quality=86"
               alt=""
