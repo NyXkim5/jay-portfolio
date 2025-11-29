@@ -4,7 +4,7 @@ import Keypad from "../components/ui/Keypad";
 const AboutSection = () => {
   return (
     <Section id="about" kicker="Who I am" title="About">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_auto] items-start">
         {/* Text column */}
         <div className="space-y-4 text-sm text-zinc-300 leading-relaxed">
           <p>

@@ -178,12 +178,15 @@ const ProjectsSection = () => {
                   muted
                   playsInline
                 >
-                  <source src="/Media/ArchvLogo.mp4" type="video/mp4" />
+                  <source
+                    src={`${import.meta.env.BASE_URL}Media/ArchvLogo.mp4`}
+                    type="video/mp4"
+                  />
                   Your browser does not support the video tag.
                 </video>
               ) : (
                 <img
-                  src="/Media/medvanta.png"
+                  src={`${import.meta.env.BASE_URL}Media/medvanta.png`}
                   alt="MedVanta iOS App"
                   className="h-full w-full object-contain p-4"
                 />

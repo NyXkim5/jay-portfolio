@@ -254,7 +254,7 @@ const EngineeringSection: React.FC = () => {
 
               {/* Drone Image - inverted for black background */}
               <img
-                src="/Media/Drone.png"
+                src={`${import.meta.env.BASE_URL}Media/Drone.png`}
                 alt="Quadcopter Drone Technical Diagram"
                 className="max-w-full max-h-full object-contain relative z-10"
                 style={{ filter: "invert(1) brightness(0.9)" }}

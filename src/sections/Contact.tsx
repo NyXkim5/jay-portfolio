@@ -8,7 +8,7 @@ const HEADER_NAMES = [
   "김준혁 나다나엘 킴", // Korean
   "ジュンヒョク・ナサナエル・キム", // Japanese
   "金俊赫·纳撒内尔·金", // Chinese
-  "01001010 01001011", // Binary
+  "01001010 01001011", // Binary JK
 ];
 
 // cycles through different languages - looks cooler than static text
@@ -88,7 +88,10 @@ const ContactSection = () => {
               loop
               playsInline
             >
-              <source src="/Media/jellyfish.mp4" type="video/mp4" />
+              <source
+                src={`${import.meta.env.BASE_URL}Media/jellyfish.mp4`}
+                type="video/mp4"
+              />
             </video>
           </div>
 
@@ -130,9 +133,14 @@ const ContactSection = () => {
             {/* Intro text */}
             <div className="max-w-3xl space-y-4 text-sm leading-relaxed text-zinc-300">
               <p>
-                How to reach me? Whether you're interested in collaborating on a
-                project, have a question about my work, or just want to say
-                hello, feel free to get in touch!
+                I'm looking for roles and collaborations where I can work at the
+                intersection of systems, product, and defence—places that care
+                about both performance and the operator experience.
+              </p>
+              <p>
+                If you're building tools for analysts, operators, or engineers,
+                I'd love to talk about how I can help with product thinking,
+                prototyping, and full-stack implementation.
               </p>
             </div>
 
@@ -228,7 +236,7 @@ const ContactSection = () => {
             {/* Resume download button */}
             <div className="pt-6 border-t border-neutral-800">
               <a
-                href="/Media/ResumeV4.A.pdf"
+                href={`${import.meta.env.BASE_URL}Media/ResumeV4.A.pdf`}
                 download="Jay_Kim_Resume.pdf"
                 className="group relative flex items-center justify-between p-4 border border-orange-500/30 bg-black/40 hover:bg-black/60 hover:border-orange-500/60 transition-all duration-300"
               >
@@ -296,7 +304,7 @@ const ContactSection = () => {
         </div>
       </div>
 
-      <style>{`
+      <style jsx>{`
         @keyframes scan {
           0%,
           100% {

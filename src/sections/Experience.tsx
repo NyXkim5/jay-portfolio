@@ -203,7 +203,10 @@ const ExperienceSection = () => {
                   }
                 }}
               >
-                <source src="/Media/blobvid1.mp4" type="video/mp4" />
+                <source
+                  src={`${import.meta.env.BASE_URL}Media/blobvid1.mp4`}
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </video>
 

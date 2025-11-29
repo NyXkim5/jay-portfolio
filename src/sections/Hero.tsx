@@ -46,7 +46,10 @@ const Hero = () => {
           loop
           playsInline
         >
-          <source src="/Media/unicorn-1763271003836.mp4" type="video/mp4" />
+          <source
+            src={`${import.meta.env.BASE_URL}Media/unicorn-1763271003836.mp4`}
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
 
@@ -96,9 +99,9 @@ const Hero = () => {
                 "0 0 30px rgba(251, 146, 60, 0.8), 0 0 15px rgba(251, 146, 60, 0.6)",
             }}
           >
-            Was president of UCI's Unmanned Aerial Vehicles club, logistics for
-            Hack at UCI, and interned as a Design Intern at Cyber@UCI and Office
-            Outreach Intern at ASUCI.
+            I led UCI's Unmanned Aerial Vehicles club as President, ran
+            logistics for Hack at UCI, and interned as a Design Intern at
+            Cyber@UCI and Office Outreach Intern at ASUCI.
           </p>
 
           <p
@@ -108,8 +111,8 @@ const Hero = () => {
                 "0 0 30px rgba(251, 146, 60, 0.8), 0 0 15px rgba(251, 146, 60, 0.6)",
             }}
           >
-            I build full-stack apps at Archv and work on the Marketing Team for
-            Artificial Intelligence at UCI.
+            I built full-stack apps at Archv AI and worked on the Marketing Team
+            for Artificial Intelligence at UCI.
           </p>
 
           <p
@@ -126,7 +129,9 @@ const Hero = () => {
           {/* Bottom accent line */}
           <div className="mt-8 flex items-center gap-2">
             <div className="w-12 h-[1px] bg-gradient-to-r from-orange-500 to-transparent" />
-            <span className="text-[10px] tracking-[0.3em] uppercase text-zinc-600 font-mono"></span>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-zinc-600 font-mono">
+              Currently building
+            </span>
           </div>
         </div>
       </div>
