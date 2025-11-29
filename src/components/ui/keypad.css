@@ -1,0 +1,224 @@
+/* Wrapper  */
+.js-keypad-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Core keypad container – ported from the CodePen */
+.js-keypad {
+  position: relative;
+  aspect-ratio: 400 / 310;
+  width: clamp(260px, 32vw, 400px);
+  display: flex;
+  place-items: center;
+  -webkit-tap-highlight-color: transparent;
+  transform-style: preserve-3d;
+}
+
+/* Any button key */
+.js-keypad .key {
+  transform-style: preserve-3d;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Pressed-in feel */
+.js-keypad .key[data-pressed="true"],
+.js-keypad .key:active .key__content {
+  translate: 0 calc(var(--travel, 20) * 1%);
+}
+
+/* Content that actually moves when pressed */
+.js-keypad .key__content {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  transition: translate 0.12s ease-out;
+  container-type: inline-size;
+  position: relative;
+}
+
+/* Text block inside key */
+.js-keypad .key__text {
+  position: absolute;
+  inset: 5% 0 auto 0;
+  width: 86%;
+  height: 46%;
+  translate: 8% 10%;
+  transform: rotateX(36deg) rotateY(45deg) rotateX(-90deg);
+  mix-blend-mode: normal;
+  color: hsl(0 0% 94%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.25em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+}
+
+/* Main label (JAY / KIM / STUDIO) */
+.js-keypad .key__title {
+  font-size: 12cqi;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+/* Subtitle (FIRST NAME / etc) */
+.js-keypad .key__subtitle {
+  font-size: 6.5cqi;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Narrow text tweak on the small single keys */
+.js-keypad .keypad__single .key__text {
+  width: 52%;
+  height: 62%;
+  translate: 45% -16%;
+}
+
+/* Simple mask span */
+.js-keypad .key__mask {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+/* Base tray underneath the keys */
+.js-keypad .keypad__base {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.js-keypad img {
+  width: 100%;
+  transition: translate 0.12s ease-out;
+}
+
+/* ---------- Single keys (right-hand wedges) ---------- */
+
+.js-keypad .keypad__single {
+  position: absolute;
+  width: 40.5%;
+  height: 46%;
+  left: 54%;
+  bottom: 36%;
+  clip-path: polygon(
+    0 0,
+    54% 0,
+    89% 24%,
+    100% 70%,
+    54% 100%,
+    46% 100%,
+    0 69%,
+    12% 23%,
+    47% 0%
+  );
+  mask: url("https://assets.codepen.io/605876/keypad-single.png?format=auto&quality=86")
+    50% 50% / 100% 100%;
+}
+
+.js-keypad .keypad__single--left {
+  left: 29.3%;
+  bottom: 54.2%;
+}
+
+.js-keypad .keypad__single img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 96%;
+  opacity: 1;
+  translate: -50% 1%;
+}
+
+/* ---------- Double key (big lower key) ---------- */
+
+.js-keypad .keypad__double {
+  position: absolute;
+  width: 64%;
+  height: 65%;
+  left: 6%;
+  bottom: 17.85%;
+  clip-path: polygon(
+    34% 0,
+    93% 44%,
+    101% 78%,
+    71% 100%,
+    66% 100%,
+    0 52%,
+    0 44%,
+    7% 17%,
+    30% 0
+  );
+  mask: url("https://assets.codepen.io/605876/keypad-double.png?format=auto&quality=86")
+    50% 50% / 100% 100%;
+}
+
+.js-keypad .keypad__double img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 99%;
+  opacity: 1;
+  translate: -50% 1%;
+}
+
+/* Optional hue / saturation hooks (not animated yet, but matches original) */
+.js-keypad .key img {
+  filter: hue-rotate(calc(var(--hue, 0) * 1deg)) saturate(var(--saturate, 1))
+    brightness(var(--brightness, 1));
+}
+
+/* Give keys some default travel depth */
+.js-keypad .key {
+  --travel: 20;
+}
+/* Text overlay on each cap */
+.js-keypad .key__mask {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+.js-keypad .key__content {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+/* The label on the cap surface */
+.js-keypad .key__text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0.9rem 1.1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+  font-size: clamp(10px, 0.7rem + 0.2vw, 13px);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: hsl(0 0% 96%);
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: normal;
+}
+
+.js-keypad--orange .key img {
+  filter: hue-rotate(140deg) saturate(1.3) brightness(1.15);
+}
+
+/* Keep base plate neutral */
+.js-keypad--orange .keypad__base img {
+  filter: none;
+}
