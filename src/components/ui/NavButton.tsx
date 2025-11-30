@@ -26,20 +26,21 @@ const NavButton = ({ onClick, isOpen }: NavButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className="nav-button"
+      className="nav-button hidden md:block"
       style={{
         position: "fixed",
         left: 0,
         top: "50%",
         transform: "translateY(-50%)",
-        zIndex: 50,
+        zIndex: 30,
         width: "56px",
         height: "240px",
         background: "transparent",
         border: "none",
         cursor: "pointer",
-        transition: "opacity 0.3s ease",
+        transition: "opacity 0.3s ease, visibility 0.3s ease",
         opacity: isOpen ? 0 : 1,
+        visibility: isOpen ? "hidden" : "visible",
         pointerEvents: isOpen ? "none" : "auto",
       }}
     >
